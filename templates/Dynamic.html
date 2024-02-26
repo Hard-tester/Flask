@@ -1,8 +1,10 @@
 <div>
-    <h6>Name : {{job['name'] }}</h6>
-    <h6>Email : {{job['email']}}</h6>
-    <!-- <h6>Age : {{JOBS['age']}}</h6> -->
-    {% if 'age' < '38 'in job %}
+    {% for job in jobs %}
+        <h6>Name : {{job['name'] }}</h6>
+        <h6>Email : {{job['email']}}</h6>
+
+        {% if job['age'] < 38  %}
         <h6>Age : {{job['age']}}</h6>
-    {% endif %}
+        {% endif %}
+    {% endfor %}
 </div>
