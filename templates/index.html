@@ -17,6 +17,8 @@
             font-weight: 400;
             font-style: normal;
         }
+
+
     </style>
 </head>
 <body class="m-1 p-2 bg-info-subtle" >
@@ -35,22 +37,26 @@
         <form action="" method="post">
 
             <p>
-                <label for="content"> todo content</label>
+                <label for="content"> Task </label>
                
             </p>
             <p>
-                <input for="text" name="content" placeholder="add todo ..." >
+                <input for="text" name="content" placeholder="add Task ..." >
             </p>
             <p>
-                <b><label for="degree">Degree</label></b>
+                <b><label for="degree">Priority</label></b>
             </p>
             <p>
-                <input required type="radio" name="degree" id="degree-0" value="important">
-                <label for="degree-0">important</label>
+                <input required type="radio" name="degree" id="degree-0" value="Urgent">
+                <label for="degree-0">Urgent Task</label>
             </p>
             <p>
-                <input required type="radio" name="degree" id="degree-1" value="unimportant">
-                <label for="degree-1">unimportant</label>
+                <input required type="radio" name="degree" id="degree-1" value="important">
+                <label for="degree-1">important Task</label>
+            </p>
+            <p>
+                <input required type="radio" name="degree" id="degree-2" value="Minor">
+                <label for="degree-2">Minor Task</label>
             </p>
 
             <button type="submit" class="bg-success">submit</button>
@@ -64,21 +70,33 @@
         
     </div>
 
-    <div class="border border-info">
+    <div class="">
 
         {% for todo in Flask_table %}
-        <div >
+            <div class="m-1 p-2 " >
+                
+                <table>
+                    <tr>
+                        <td>Task</td>
+                        <td>{{todo['content']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Priority</td>
+                        <td>{{todo['degree']}}</td>
+                    </tr>
+                </table>
+                
             
-            <ul>
-                <li>content {{todo['content']}}</li>
-                <li>degree {{todo['degree']}}</li>
-            </ul>
+
+                <div >
+                    <form action="{{ url_for('delete',id=todo['_id']) }}" method="post" >
+                        <input type="submit" value="delete todo" onclick="return confirm('are you sure ? ')"/>
+                    </form>
+                </div>
+
+            </div >
             
-        </div>
-        
-        <form action="{{ url_for('delete',id=todo['_id']) }}" method="post">
-            <input type="submit" value="delete todo" onclick="return confirm('are you sure ? ')"/>
-        </form>
+            
         
         {%endfor%}
         
