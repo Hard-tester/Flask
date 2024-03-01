@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(254, 254, 254);
+}
+
+.center_content{
+    /* display: inline-block; */
+    margin-top: 2%;
+    margin-left: 25%;
+    width: 50%;
+    height: 100%;
+    /* border: 3px solid green; */
+    background-color: rgb(165, 212, 212);
+    padding: 10px;
+    text-align: center;
+}
+
+.sub_center{
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    /* border: 3px solid rgb(233, 91, 3); */
+    background-color: rgb(188, 186, 186);
+    padding: 10px;
+    text-align: center;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+.card-header{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sub-header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* .Name-Information{
+} */
+
+#FirstName{
+    
+    /* float: left; */
+    /* display: inline-block; */
+    padding-bottom: 2%;
+    margin :5%;
+    /* width: 50%; */
+
+}
+#LastName{
+    /* display: inline-block; */
+    padding-bottom: 2%;
+    margin :5%
+}
+
+.Email_imformation{
+    display: inline-block;
+    padding-bottom: 5%;
+    margin :5%
+}
+
+.Password_infromation{
+    display: inline-block;
+    padding-bottom: 5%;
+    margin :5%
+}
+
+/* .Submit_button{
+    width: -webkit-fill-available;
+    background-color: blue;
+} */
+
+input[type=submit]{
+    background-color: darkgreen;
+    width: -webkit-fill-available;
+}
